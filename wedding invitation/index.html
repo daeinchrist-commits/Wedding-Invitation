@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>You're Invited</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ── Invitation Card ── -->
+  <div class="card">
+    <div class="inner">
+
+      <div class="flourish">✦ &nbsp;&nbsp; ✦ &nbsp;&nbsp; ✦</div>
+
+      <h1 class="headline">You're Invited</h1>
+
+      <div class="divider">
+        <span></span>
+        <em>to celebrate the union of</em>
+        <span></span>
+      </div>
+
+      <p class="names">
+        Joe<br>
+        <span class="amp">&</span><br>
+        Anna Stull
+      </p>
+      
+
+      <div class="details">
+        <div class="detail-row">
+          <span class="dt-label">Date</span>
+          <span class="dt-value">Friday, the third of July</span>
+        </div>
+        <div class="detail-row">
+          <span class="dt-label">Time</span>
+          <span class="dt-value">Five o'clock in the Afternoon</span>
+        </div>
+        <div class="detail-row">
+          <span class="dt-label">Location</span>
+          <span class="dt-value">The Cathedral of Christ the King</span>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button class="btn btn-primary" onclick="document.getElementById('rsvpModal').classList.add('open')">
+          RSVP
+        </button>
+        <!-- Replace href with the actual registry URL -->
+        <a class="btn btn-secondary" href="https://www.amazon.com" target="_blank" rel="noopener">
+          Registry
+        </a>
+      </div>
+
+      
+
+    </div>
+  </div>
+
+  <!-- ── RSVP Modal ── -->
+  <div class="modal-overlay" id="rsvpModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <h2>RSVP</h2>
+
+      <div id="rsvpForm">
+        <label>Your Name</label>
+        <input type="text" id="rsvpName" placeholder="Full name" />
+
+        <label>Email</label>
+        <input type="email" id="rsvpEmail" placeholder="your@email.com" />
+
+        <label>Attending?</label>
+        <select id="rsvpAttending">
+          <option value="yes">Joyfully accepts</option>
+          <option value="no">Regretfully declines</option>
+        </select>
+
+        <label>Number of Guests</label>
+        <input type="number" id="rsvpGuests" min="1" max="6" value="1" />
+
+        <label>Dietary Notes (optional)</label>
+        <textarea id="rsvpNotes" placeholder="Any dietary requirements or allergies…"></textarea>
+
+        <div class="modal-buttons">
+          <button class="btn btn-primary" style="flex:1" onclick="sendRSVP()">Send RSVP</button>
+          <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+        </div>
+      </div>
+
+      <div class="success-msg" id="rsvpSuccess">
+        Thank you — we can't wait to celebrate with you. 🤍
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
